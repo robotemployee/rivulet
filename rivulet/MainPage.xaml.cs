@@ -16,8 +16,10 @@ public partial class MainPage : ContentPage
         });
         
         StartCircleAnimation();
-    }
 
+        MeowPlayground.Meow();
+    }
+    
     private void OnCounterClicked(object? sender, EventArgs e)
     {
         _count++;
@@ -40,6 +42,6 @@ public partial class MainPage : ContentPage
 
     private void StartCircleAnimation() {
         Animation animation = new Animation(v => CircleGraphicsView.Rotation = v, 0, 360);
-        //animation.Commit(this, "SpinAnimation", 16, 2000, Easing.Linear, (v, c) => CircleGraphicsView.Rotation = 0, () => true);
+        animation.Commit(this, "SpinAnimation", 16, 2000, Easing.Linear, (v, c) => CircleGraphicsView.Rotation = 0, () => true);
     }
 }
